@@ -1,5 +1,6 @@
 const restaurants = [
   {
+    id: 1,
     type: "African",
     name: "Sahara delights Eatery",
     meals: [
@@ -16,6 +17,7 @@ const restaurants = [
     ],
   },
   {
+    id: 2,
     type: "Chinese",
     name: "Bamboo Grove Fusion",
     meals: [
@@ -32,6 +34,7 @@ const restaurants = [
     ],
   },
   {
+    id: 3,
     type: "American",
     name: "All American BBQ",
     meals: [
@@ -48,6 +51,7 @@ const restaurants = [
     ],
   },
   {
+    id: 4,
     type: "Indian",
     name: "Curry House Kitchen",
     meals: [

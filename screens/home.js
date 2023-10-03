@@ -13,10 +13,16 @@ import CustomHeaderTitle from "../components/headerTitle";
 import CustomHeaderRight from "../components/customHeaderRight";
 import ListItem from "../components/listItem";
 import items from "../constants/lists";
+import RestaurantComponent from "../components/restaurantComponent";
+import restaurants from "../constants/mealsAndRestaurants";
 
 const Home = ({ navigation }) => {
   const renderLists = ({ item }) => {
     return <ListItem image={item.image} name={item.name} />;
+  };
+
+  const renderRestaurants = ({ item }) => {
+    return <RestaurantComponent restaurant={item} />;
   };
   return (
     <SafeAreaView style={styles.container}>
@@ -50,11 +56,13 @@ const Home = ({ navigation }) => {
         />
         <View style={styles.horizontalScrollContainer}>
           <Text style={styles.featuredTitle}>Featured</Text>
-          <ScrollView style={styles.featured} horizontal={true}>
-            <View style={styles.box} />
-            <View style={styles.box} />
-            <View style={styles.box} />
-          </ScrollView>
+          <FlatList
+            data={restaurants}
+            renderItem={renderRestaurants}
+            keyExtractor={(restaurant) => restaurant.id}
+            style={styles.featured}
+            horizontal={true}
+          ></FlatList>
         </View>
       </ScrollView>
     </SafeAreaView>
